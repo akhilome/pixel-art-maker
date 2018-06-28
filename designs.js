@@ -33,3 +33,17 @@ $('#size-picker').submit(function(e) {
   e.preventDefault();
   makeGrid();
 });
+
+// Get user specified color
+let color = $('#color-picker').val();
+
+// Listen for color changes and reassign accordingly
+$('#color-picker').change(function() {
+  color = $(this).val();
+});
+
+// Set the background color for a cell on user clicking the cell
+canvas.on('click', 'td', function(e) {
+  e.preventDefault();
+  $(this).css('background-color', color);
+});
