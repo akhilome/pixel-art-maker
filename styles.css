@@ -72,3 +72,25 @@ input[type="color"] {
   padding: 5px;
   background: #fff;
 }
+
+/* Media Queries */
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  input {
+    display: block;
+    margin: 6px auto;
+    padding: 5px 10px;
+  }
+}
