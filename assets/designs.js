@@ -32,8 +32,12 @@ $('#color-picker').change(function() {
   color = $(this).val();
 });
 
-// Set the background color for a cell on user clicking the cell
+// Set or unset the background color for a cell on user clicking the cell
 canvas.on('click', 'td', function(e) {
   e.preventDefault();
-  $(this).css('background-color', color);
+  if(!$(this).attr('style')) {
+    $(this).css('background-color', color);
+  } else {
+    $(this).removeAttr('style');
+  }
 });
