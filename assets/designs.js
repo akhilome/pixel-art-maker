@@ -1,28 +1,18 @@
-// Get user specified grid size
-let gridHeight = Number($('#input-height').val());
-let gridWidth = Number($('#input-width').val());
-
-// Monitor input fields for changes
-$('#input-height').change(function() { 
-  gridHeight = Number($(this).val());
-});
-
-$('#input-width').change(function() {
-  gridWidth = Number($(this).val());
-});
-
 // Get the canvas
 let canvas = $('#pixel-canvas');
 
-// Create the new grid when called
+/**
+ * @description Clears any existing grid on the page and create new one based off of user specified grid height and width
+ */
 function makeGrid() {
-  // Clear current Grid
   canvas.html('');
 
-  // Draw new grid
-  for (let i = 0; i < gridHeight; ++i) {
+  let height = Number($('#input-height').val());
+  let width = Number($('#input-width').val());
+
+  for (let i = 0; i < height; ++i) {
     canvas.prepend('<tr></tr>');
-    for (let j = 0; j < gridWidth; ++j) {
+    for (let j = 0; j < width; ++j) {
       canvas.children().first().append('<td></td>');
     }
   }
